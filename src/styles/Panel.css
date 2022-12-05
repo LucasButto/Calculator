@@ -1,0 +1,18 @@
+.panel-container {
+  width: 100%;
+  height: 100px;
+  background-color: #d1e6a8;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.panel-result {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  font-size: 3rem;
+  font-weight: 700;
+}

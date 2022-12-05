@@ -1,0 +1,42 @@
+.button {
+  width: 75px;
+  height: 75px;
+  background-color: #4caf50;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+  animation: click 0.3s;
+}
+
+@keyframes click {
+  0% {
+    width: 75px;
+    height: 75px;
+  }
+  50% {
+    width: 70px;
+    height: 70px;
+  }
+  100% {
+    width: 75px;
+    height: 75px;
+  }
+}
+.button-operators {
+  background-color: #cab01d;
+}
+
+.button-equal {
+  background-color: #a51a1a;
+}
