@@ -3,11 +3,11 @@ import ResultContext from "../context/ResultContext";
 import "../styles/Panel.css";
 
 const Panel = () => {
-  const { result } = useContext(ResultContext);
+  const { panelNumber } = useContext(ResultContext);
 
   return (
     <div className="panel-container">
-      <p className="panel-result">{result}</p>
+      <p className="panel-result">{panelNumber}</p>
     </div>
   );
 };

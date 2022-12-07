@@ -1,4 +1,10 @@
-.Buttons-container {
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttons-operators-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
