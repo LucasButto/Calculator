@@ -28,11 +28,20 @@ export const useCalculations = () => {
     if (content === "=") {
       if (value === "" && result === "") {
         alert("Debe ingresar valores para calcular");
+      } else if (value !== "" && result === "") {
+        setPanelNumber(
+          new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR",
+          }).format(value.toFixed(5))
+        );
       } else {
         console.log("result: ", result);
         console.log("value1: ", value);
         console.log("lastOperator: ", lastOperator);
-        setPanelNumber(logicsOperations());
+        setPanelNumber(
+          new Intl.NumberFormat("de-DE").format(logicsOperations().toFixed(5))
+        );
       }
     }
 
