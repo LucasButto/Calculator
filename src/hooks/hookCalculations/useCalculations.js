@@ -83,6 +83,10 @@ export const useCalculations = () => {
       case "/":
         if (value === "0") {
           alert("No se puede dividir por 0");
+          setResult("");
+          setValue("");
+          setLastOperator("");
+          setChangeNumber(false);
         } else {
           logicResult = parseFloat(result) / parseFloat(value);
         }
