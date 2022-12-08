@@ -16,29 +16,26 @@ export const useCalculations = () => {
 
   const operators = ["+", "-", "*", "/"];
 
+  const cleanValues = () => {
+    setResult("");
+    setValue("");
+    setLastOperator("");
+    setChangeNumber(false);
+    setPanelNumber("0.");
+  };
+
   const calculateResult = (content) => {
     if (content === "C") {
-      setResult("");
-      setValue("");
-      setLastOperator("");
-      setChangeNumber(false);
-      setPanelNumber("0.");
+      cleanValues();
     }
 
     if (content === "=") {
       if (value === "" && result === "") {
         alert("Debe ingresar valores para calcular");
-      } else if (value !== "" && result === "") {
-        setPanelNumber(
-          new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR",
-          }).format(value.toFixed(5))
-        );
+      } else if (isNaN(value) || isNaN(result)) {
+        alert("Chupala Fran");
+        cleanValues();
       } else {
-        console.log("result: ", result);
-        console.log("value1: ", value);
-        console.log("lastOperator: ", lastOperator);
         setPanelNumber(
           new Intl.NumberFormat("de-DE").format(logicsOperations().toFixed(5))
         );
@@ -59,7 +56,6 @@ export const useCalculations = () => {
       changeNumber === false ? setChangeNumber(true) : setChangeNumber(false);
     }
     if (!operators.includes(content) && content !== "C" && content !== "=") {
-      console.log("in setvalues", changeNumber);
       if (changeNumber === false) {
         setValue(value + content);
         setPanelNumber(value + content);
@@ -83,10 +79,7 @@ export const useCalculations = () => {
       case "/":
         if (value === "0") {
           alert("No se puede dividir por 0");
-          setResult("");
-          setValue("");
-          setLastOperator("");
-          setChangeNumber(false);
+          cleanValues();
         } else {
           logicResult = parseFloat(result) / parseFloat(value);
         }
