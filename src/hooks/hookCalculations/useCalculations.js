@@ -25,16 +25,27 @@ export const useCalculations = () => {
   };
 
   const calculateResult = (content) => {
+    console.log("value", value);
+    console.log("result", result);
+    console.log("lastOperator", lastOperator);
+    console.log("changeNumber", changeNumber);
     if (content === "C") {
       cleanValues();
     }
 
     if (content === "=") {
-      if (value === "" && result === "") {
-        alert("Debe ingresar valores para calcular");
-      } else if (isNaN(value) || isNaN(result)) {
-        alert("Chupala Fran");
+      if (
+        (value === "" && result === "") ||
+        (value === "" && result !== "") ||
+        isNaN(value) ||
+        isNaN(result)
+      ) {
+        alert("SYNTAX ERROR");
         cleanValues();
+      } else if (value !== "" && result === "") {
+        setPanelNumber(value);
+        setResult(value);
+        changeNumber === false ? setChangeNumber(true) : setChangeNumber(false);
       } else {
         setPanelNumber(
           new Intl.NumberFormat("de-DE").format(logicsOperations().toFixed(5))
