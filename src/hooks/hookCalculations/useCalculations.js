@@ -55,7 +55,7 @@ export const useCalculations = () => {
 
     if (operators.includes(content)) {
       if (value === "" && result === "") {
-        alert("Debe ingresar valores para calcular");
+        alert("SYNTAX ERROR");
       } else if (lastOperator === "") {
         setResult(value);
       } else {
@@ -89,7 +89,7 @@ export const useCalculations = () => {
         break;
       case "/":
         if (value === "0") {
-          alert("No se puede dividir por 0");
+          alert("SYNTAX ERROR");
           cleanValues();
         } else {
           logicResult = parseFloat(result) / parseFloat(value);

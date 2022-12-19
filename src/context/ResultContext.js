@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 const ResultContext = createContext();
 
 const ResultContextProvider = ({ children }) => {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("0");
   const [value, setValue] = useState("");
   const [panelNumber, setPanelNumber] = useState("0.");
   const [lastOperator, setLastOperator] = useState("");
