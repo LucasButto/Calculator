@@ -55,9 +55,13 @@
   width: 300px;
   height: 75px;
   background-color: #a51a1a;
-  animation: click 0.3s;
 }
 
 .button-clear:hover {
   background-color: #881616;
+}
+
+.button-clear:focus {
+  outline: none;
+  animation: click 0.3s;
 }
